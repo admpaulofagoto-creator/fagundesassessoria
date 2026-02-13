@@ -179,11 +179,6 @@
       width: 100%;
     }
 
-    .hero::before,
-    .hero::after {
-      display: none; /* Remove elementos decorativos que atrapalham no mobile */
-    }
-
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -615,47 +610,57 @@
       max-height: 45px;
     }
 
-    /* IRPF HIGHLIGHT */
+    /* ===== IRPF HIGHLIGHT - CORRIGIDO E ALINHADO ===== */
     .irpf-highlight {
       background: linear-gradient(145deg, #fef3c7, #fde68a);
-      padding: 16px 20px;
-      border-radius: 22px;
+      padding: 20px;
+      border-radius: 24px;
       color: var(--primary-deep);
       display: flex;
       align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-      border: 1px solid var(--gold);
+      gap: 16px;
+      margin: 20px 0;
+      border: 2px solid var(--gold);
       width: 100%;
+      box-shadow: 0 8px 20px rgba(251, 191, 36, 0.15);
     }
 
     .irpf-highlight i {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       color: var(--gold-deep);
       flex-shrink: 0;
-      width: 32px;
-      text-align: center;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 16px;
     }
 
     .irpf-highlight > div {
       flex: 1;
       min-width: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .irpf-highlight p {
       font-weight: 600;
-      margin-bottom: 2px;
-      font-size: 0.95rem;
+      margin-bottom: 4px;
+      font-size: 1rem;
       color: var(--primary-deep);
+      opacity: 0.8;
     }
 
     .irpf-highlight span {
       font-weight: 800;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       color: var(--primary-deep);
       word-wrap: break-word;
       display: block;
-      line-height: 1.2;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
     }
 
     /* Break email */
@@ -730,6 +735,26 @@
       .hero-grid > div:last-child > div {
         padding: 30px !important;
         border-radius: 36px !important;
+      }
+
+      /* IRPF HIGHLIGHT - MOBILE */
+      .irpf-highlight {
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .irpf-highlight i {
+        font-size: 1.8rem;
+        width: 42px;
+        height: 42px;
+      }
+
+      .irpf-highlight p {
+        font-size: 0.9rem;
+      }
+
+      .irpf-highlight span {
+        font-size: 1.8rem;
       }
 
       /* Seções */
@@ -939,21 +964,25 @@
         margin-bottom: 12px !important;
       }
 
-      /* IRPF Highlight */
+      /* IRPF HIGHLIGHT - MOBILE PEQUENO */
       .irpf-highlight {
-        padding: 12px 15px;
+        padding: 14px;
         gap: 10px;
+        border-radius: 20px;
       }
-      
+
       .irpf-highlight i {
-        font-size: 1.4rem;
-        width: 28px;
+        font-size: 1.5rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
       }
-      
+
       .irpf-highlight p {
         font-size: 0.85rem;
+        margin-bottom: 2px;
       }
-      
+
       .irpf-highlight span {
         font-size: 1.5rem;
       }
@@ -1179,17 +1208,15 @@
         font-size: 1.1rem;
       }
       
+      /* IRPF HIGHLIGHT - EXTRA PEQUENO */
       .irpf-highlight i {
-        font-size: 1.2rem;
-        width: 24px;
+        font-size: 1.3rem;
+        width: 32px;
+        height: 32px;
       }
       
       .irpf-highlight span {
         font-size: 1.3rem;
-      }
-      
-      .irpf-highlight p {
-        font-size: 0.8rem;
       }
       
       .contact-premium h4 {
@@ -1283,6 +1310,7 @@
             
             <h3 style="font-size: 1.8rem; color: var(--primary-deep); margin-bottom: 16px; word-wrap: break-word; line-height: 1.2;">Declaração de Imposto de Renda PF</h3>
             
+            <!-- IRPF HIGHLIGHT CORRIGIDO - PERFEITAMENTE ALINHADO -->
             <div class="irpf-highlight">
               <i class="fas fa-tag"></i>
               <div>
@@ -1536,7 +1564,7 @@
     duration: 600,
     once: true,
     offset: 50,
-    disable: window.innerWidth < 768 // Desativa em mobile para melhor performance
+    disable: window.innerWidth < 768
   });
 
   // MENU MOBILE
