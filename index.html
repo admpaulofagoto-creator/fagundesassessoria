@@ -43,7 +43,9 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--gray);
-      background: var(--white);
+      background: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.02) 0%, transparent 50%),
+                  repeating-linear-gradient(45deg, rgba(0,0,0,0.005) 0px, rgba(0,0,0,0.005) 2px, transparent 2px, transparent 4px),
+                  #ffffff;
       overflow-x: hidden;
     }
 
@@ -80,10 +82,16 @@
       align-items: center;
     }
 
-    /* LOGO */
+    /* LOGO - NOVA VERSÃO COM IMAGEM */
     .logo {
       display: flex;
       flex-direction: column;
+    }
+    
+    .logo-img {
+      height: 60px; /* Ajuste a altura conforme necessário */
+      width: auto;
+      display: block;
     }
 
     .logo-main {
@@ -408,6 +416,54 @@
       font-size: 1.3rem;
     }
 
+    /* NOVA SEÇÃO DE DIFERENCIAIS */
+    .differentials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .differential-item {
+      text-align: center;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: 0.3s;
+      border: 1px solid #f1f5f9;
+    }
+
+    .differential-item:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-light);
+    }
+
+    .differential-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--gradient-gold);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--primary-deep);
+      margin: 0 auto 24px;
+    }
+
+    .differential-item h4 {
+      font-size: 1.5rem;
+      color: var(--primary-deep);
+      margin-bottom: 16px;
+    }
+
+    .differential-item p {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
     /* CONTATO */
     .contact-premium {
       background: var(--primary-deep);
@@ -493,7 +549,8 @@
       .hero-grid,
       .services-grid,
       .about-grid,
-      .contact-premium {
+      .contact-premium,
+      .differentials-grid {
         grid-template-columns: 1fr;
       }
       
@@ -528,9 +585,9 @@
 <header>
   <div class="container">
     <nav>
+      <!-- LOGO SUBSTITUÍDA PELA IMAGEM -->
       <div class="logo">
-        <div class="logo-main">FAGUNDES<span>.</span></div>
-        <div class="logo-sub">ASSESSORIA CONTÁBIL</div>
+        <img src="https://i.imgur.com/RfT7Wpg.png" alt="Fagundes Assessoria Contábil" class="logo-img">
       </div>
 
       <ul class="nav-links">
@@ -587,12 +644,12 @@
             
             <h3 style="font-size: 2rem; color: var(--primary-deep); margin-bottom: 16px;">Declaração de Imposto de Renda PF</h3>
             
-            <!-- HIGHLIGHT DO VALOR - DESTAQUE VISUAL -->
+            <!-- HIGHLIGHT DO VALOR - ALTERADO PARA R$ 120,00 -->
             <div class="irpf-highlight">
               <i class="fas fa-tag"></i>
               <div>
                 <p style="font-weight: 600; margin-bottom: 4px;">A partir de</p>
-                <span style="font-size: 2rem; font-weight: 800; color: var(--primary-deep);">R$ 100,00</span>
+                <span style="font-size: 2rem; font-weight: 800; color: var(--primary-deep);">R$ 120,00</span>
               </div>
             </div>
             
@@ -627,12 +684,13 @@
     </div>
   </section>
 
-  <!-- SOBRE -->
+  <!-- SOBRE - APENAS O SUBTÍTULO FOI SUBSTITUÍDO -->
   <section class="section" id="sobre">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <h2>Fagundes Assessoria Contábil</h2>
-        <p>Escritório de contabilidade em Valinhos/SP</p>
+        <!-- SUBTÍTULO SUBSTITUÍDO PELO TEXTO SOLICITADO -->
+        <p>A Fagundes Assessoria Contábil é especializada em oferecer soluções contábeis completas para empresas de pequeno, médio e grande porte, além de profissionais autônomos e MEIs. Nosso compromisso é garantir segurança fiscal, organização financeira e crescimento sustentável para nossos clientes. Trabalhamos com ética, transparência e responsabilidade, oferecendo atendimento personalizado e estratégico.</p>
       </div>
 
       <div class="about-grid">
@@ -640,7 +698,7 @@
           <div style="background: var(--primary); padding: 60px; border-radius: 48px; color: white;">
             <i class="fas fa-quote-right" style="font-size: 3rem; color: var(--gold); opacity: 0.5; margin-bottom: 20px;"></i>
             <h3 style="color: white; font-size: 2rem; margin-bottom: 20px;">Compromisso com sua empresa</h3>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Atendimento especializado em contabilidade para MEI, ME e EPP, além de declarações de imposto de renda pessoa física a partir de R$100,00.</p>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Atendimento especializado em contabilidade para MEI, ME e EPP, além de declarações de imposto de renda pessoa física a partir de R$120,00.</p>
             <ul class="about-list">
               <li><i class="fas fa-check-circle"></i> Abertura e encerramento de empresas</li>
               <li><i class="fas fa-check-circle"></i> Regularização de empresas</li>
@@ -660,7 +718,38 @@
               </div>
             </div>
             <p style="font-size: 1.2rem; font-weight: 600;">Contabilidade de MEI, ME e EPP • Simples Nacional • Lucro Presumido • Cálculos Trabalhistas</p>
+            
+            <!-- NOME DO CONTADOR INSERIDO AQUI - SEM ALTERAR CONTEÚDO EXISTENTE -->
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(10, 59, 63, 0.2);">
+              <p style="font-weight: 700; margin-bottom: 5px;"><i class="fas fa-user-check" style="margin-right: 8px;"></i> Contador Responsável:</p>
+              <p style="font-size: 1.4rem; font-weight: 800; color: var(--primary-deep);">Paulo Henrique Fagundes</p>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <!-- CARDS DE DIFERENCIAIS - REFORÇANDO AS INFORMAÇÕES DO SUBTÍTULO -->
+      <div class="differentials-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="differential-item">
+          <div class="differential-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4>Segurança Fiscal</h4>
+          <p>Garantimos a conformidade com as obrigações fiscais para sua empresa.</p>
+        </div>
+        <div class="differential-item">
+          <div class="differential-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4>Crescimento Sustentável</h4>
+          <p>Oferecemos suporte estratégico para o desenvolvimento saudável do seu negócio.</p>
+        </div>
+        <div class="differential-item">
+          <div class="differential-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4>Ética e Transparência</h4>
+          <p>Atendimento personalizado com total clareza em todas as etapas.</p>
         </div>
       </div>
     </div>
@@ -689,7 +778,7 @@
         <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
           <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
           <h3>Imposto de Renda PF</h3>
-          <p style="font-weight: 700; color: var(--gold-deep); margin-top: 12px; font-size: 1.4rem;">A partir de R$100</p>
+          <p style="font-weight: 700; color: var(--gold-deep); margin-top: 12px; font-size: 1.4rem;">A partir de R$120</p>
           <p style="margin-top: 8px;">Declarações de imposto de renda pessoa física</p>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
@@ -745,10 +834,10 @@
             </div>
           </div>
           
-          <!-- TAG DE PREÇO NO CONTATO -->
+          <!-- TAG DE PREÇO NO CONTATO - ALTERADO PARA R$ 120,00 -->
           <div style="margin-top: 30px; background: rgba(251,191,36,0.1); padding: 20px; border-radius: 24px; border: 1px solid var(--gold);">
             <p style="font-weight: 700; margin-bottom: 8px;"><i class="fas fa-tag" style="color: var(--gold);"></i> Imposto de Renda PF</p>
-            <p style="font-size: 1.8rem; font-weight: 800; color: var(--gold);">A partir de R$ 100</p>
+            <p style="font-size: 1.8rem; font-weight: 800; color: var(--gold);;">A partir de R$ 120</p>
             <p style="opacity: 0.9;">Declaração completa com especialistas</p>
           </div>
         </div>
@@ -770,11 +859,13 @@
   <div class="container">
     <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px;">
       <div>
-        <div class="logo" style="margin-bottom: 20px;">
-          <div class="logo-main" style="color: white;">FAGUNDES<span style="color: var(--gold);">.</span></div>
-          <div class="logo-sub" style="color: #94a3b8;">ASSESSORIA CONTÁBIL</div>
+        <!-- LOGO NO FOOTER - CORRIGIDA: SEM FILTRO, APENAS TAMANHO AJUSTADO -->
+        <div style="margin-bottom: 20px;">
+          <img src="https://i.imgur.com/RfT7Wpg.png" alt="Fagundes Assessoria Contábil" style="height: 50px; width: auto;">
         </div>
-        <p style="color: #94a3b8;">Escritório de contabilidade em Valinhos/SP. Especialistas em MEI, ME e EPP e Declaração de IRPF a partir de R$100.</p>
+        <p style="color: #94a3b8;">Escritório de contabilidade em Valinhos/SP. Especialistas em MEI, ME e EPP e Declaração de IRPF a partir de R$120.</p>
+        <!-- NOME DO CONTADOR TAMBÉM NO RODAPÉ -->
+        <p style="color: #94a3b8; margin-top: 16px;"><strong style="color: var(--gold);">Contador Responsável:</strong> Paulo Henrique Fagundes</p>
       </div>
       <div>
         <h4 style="color: white; margin-bottom: 24px;">Serviços</h4>
@@ -782,7 +873,7 @@
           <li style="margin-bottom: 12px;">Contabilidade MEI/ME/EPP</li>
           <li style="margin-bottom: 12px;">Simples Nacional/Lucro Presumido</li>
           <li style="margin-bottom: 12px;">Abertura/Encerramento</li>
-          <li style="margin-bottom: 12px; font-weight: 700; color: var(--gold);">IRPF a partir de R$100</li>
+          <li style="margin-bottom: 12px; font-weight: 700; color: var(--gold);">IRPF a partir de R$120</li>
           <li style="margin-bottom: 12px;">Regularização de empresas</li>
           <li style="margin-bottom: 12px;">Alvará de Licenciamento</li>
           <li style="margin-bottom: 12px;">Certificados Digitais</li>
